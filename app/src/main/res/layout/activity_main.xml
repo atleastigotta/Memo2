@@ -7,14 +7,18 @@
     tools:context=".MainActivity">
 
     <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/calendarView"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.488" android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/title"/>
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/diaryTextView"
@@ -22,10 +26,14 @@
         android:layout_height="wrap_content"
         android:gravity= "center"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     <EditText
         android:id="@+id/contextEditText"
@@ -33,10 +41,15 @@
         android:layout_height="116dp"
         android:inputType="textMultiLine"
         android:ems="10"
-        app:layout_constraintTop_toBottomOf="@+id/diaryTextView" android:layout_marginTop="16dp"
-        android:hint="내용을 입력하세요." android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="8dp" android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/diaryTextView"
+        android:layout_marginTop="16dp"
+        android:hint="내용을 입력하세요."
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="8dp"
         android:visibility="invisible"/>
 
     <TextView
@@ -46,9 +59,12 @@
         app:layout_constraintTop_toTopOf="@+id/contextEditText"
         app:layout_constraintBottom_toBottomOf="@+id/contextEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-        app:layout_constraintStart_toStartOf="@+id/contextEditText" android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" android:visibility="invisible"/>
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintStart_toStartOf="@+id/contextEditText"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/title"
@@ -66,6 +82,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/list_item_memo_content_text"
+        android:id="@+id/check"
+        tools:ignore="MissingConstraints"
+        android:visibility="invisible"/>
+
 
     <Button
         android:text="저장"
@@ -109,21 +134,7 @@
         android:visibility="invisible">
     </Button>
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Memo2.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Memo2.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
