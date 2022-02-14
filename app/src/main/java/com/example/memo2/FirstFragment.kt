@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.memo2.databinding.FragmentFirstBinding
+import com.example.memo2.databinding.ItemListMemoContentBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -36,6 +37,20 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
+
+    public static ArrayList<ItemListMemoContentData> createContactsList(int numContacts) {
+
+        ArrayList<ItemListMemoContentBinding> contacts = new ArrayList<ItemListMemoContentData>();
+
+        for (int i = 1; i <= numContacts; i++) {
+            contacts.add(new WordItemData("Person ", "wohahahaha"));
+        }
+
+        return contacts;
+    }
+
+
+    출처: https://hyesunzzang.tistory.com/28 [dev.ssun]
 
     override fun onDestroyView() {
         super.onDestroyView()
