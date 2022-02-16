@@ -50,7 +50,7 @@ class FirstFragment : Fragment() {
     }
 
 
-    출처: https://hyesunzzang.tistory.com/28 [dev.ssun]
+
 
     override fun onDestroyView() {
         super.onDestroyView()
