@@ -45,9 +45,15 @@ class MainActivity : AppCompatActivity() {
         }) }
 
     inner class PagerAdapter(supportFragmentManager: FragmentManager) : FragmentStatePagerAdapter(supportFragmentManager)
-    { override fun getItem(position: Int): Fragment {
-        return when (position) { 0 -> OneFragment() 1 -> TwoFragment() 2 -> ThreeFragment() 3 -> FourFragment()
-            else -> TestFragment() } }
+    {
+        override fun getItem(position: Int): Fragment {
+        return when (position)
+        {   0 -> OneFragment()
+            1 -> TwoFragment()
+            2 -> ThreeFragment()
+            3 -> FourFragment()
+            else -> TestFragment() }
+        }
         override fun getCount(): Int = 4 } }
 
 
