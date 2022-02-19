@@ -4,23 +4,24 @@ import android.view.LayoutInflater
 import android.widget.ImageView
 import androidx.annotation.NonNull
 
-public class ViewPagerAdapter extends PagerAdapter {
-    private Context mContext;
-    private ArrayList < Integer > imageList;
+public class PagerAdapter() {
+    private var context mContext;
+    private ArrayList <Integer> imageList;
 
-    public ViewPagerAdapter (Context context, ArrayList<Integer> imageList)
+    public ViewPagerAdapter (Context context,ArrayList<Integer> imageList)
     {
         this.mContext = context;
         this.imageList = imageList;
     }
 
     @NonNull
+
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater inflater =(LayoutInflater) mContext . getSystemService (Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater . inflate (R.layout.pagerview_layout, null);
+        View view = inflater. inflate (R.layout.pagerview_layout, null);
 
-        ImageView imageView = view . findViewById (R.id.imageView);
+        ImageView imageView = view. findViewById (R.id.imageView);
         imageView.setImageResource(imageList.get(position));
 
         container.addView(view);

@@ -10,7 +10,7 @@ import java.lang.reflect.Array;
 
 public class ContentAdapter {
 
-    private val dataSet: Array<String>) :
+    private val dataSet; Array<String>) :
             RecyclerView.Adapter<ContentAdapter.ViewHolder>() {
 
         /**
